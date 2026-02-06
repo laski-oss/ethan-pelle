@@ -1,0 +1,83 @@
+/* Tausta */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    height: 100vh;
+    background: linear-gradient(270deg, #1e90ff, #6a11cb, #00c6ff);
+    background-size: 600% 600%;
+    animation: gradientMove 10s ease infinite;
+    color: white;
+}
+
+/* Keskitys */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/* Fade animaatio */
+.fade-in {
+    animation: fadeIn 1.5s ease forwards;
+}
+
+/* Otsikko */
+.title {
+    font-size: 48px;
+    margin-bottom: 30px;
+    animation: slideDown 1.2s ease;
+}
+
+/* Nimi */
+.name-text {
+    font-size: 64px;
+    font-weight: bold;
+    animation: glowText 2s infinite alternate;
+}
+
+/* Nappi */
+.glow-button {
+    padding: 16px 40px;
+    font-size: 20px;
+    border: none;
+    border-radius: 30px;
+    background: white;
+    color: #6a11cb;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(255,255,255,0.6);
+    animation: bounce 2s infinite;
+    transition: transform 0.3s;
+}
+
+.glow-button:hover {
+    transform: scale(1.1);
+}
+
+/* Animaatiot */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-40px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+@keyframes glowText {
+    from { text-shadow: 0 0 10px #fff; }
+    to { text-shadow: 0 0 30px #00c6ff; }
+}
